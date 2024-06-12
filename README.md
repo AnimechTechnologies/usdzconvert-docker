@@ -6,13 +6,13 @@ Apple usdzconvert 0.66 in a docker image
 ### Powershell / Linux / OSX
 Run the command:
 ``` bash
-docker run -v ${PWD}:/mnt/assets --rm michaelgold/usdzconvert /mnt/assets/your-gltf-file.glb
+docker run -v ${PWD}:/mnt/assets --rm animechtechnologies/usdzconvert /mnt/assets/your-gltf-file.glb
 ```
 
 ## Building from source
 Run the command:
 ``` bash
-docker build -t michaelgold/usdzconvert . -f Dockerfile
+docker build -t animechtechnologies/usdzconvert . -f Dockerfile
 ```
 ## Notes
 
