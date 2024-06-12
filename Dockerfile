@@ -7,8 +7,8 @@ ARG CMAKE_VER=v3.14.6
 
 RUN apt-get -qq update && apt-get install -y && apt-get install -y \
     git build-essential nasm zlib1g-dev sudo \
-    libssl-dev libffi-dev libxrandr-dev libxcursor-dev libxinerama-dev libxi-dev 
-    
+    libssl-dev libffi-dev libxrandr-dev libxcursor-dev libxinerama-dev libxi-dev
+
 
 #install cmake
 WORKDIR /home/tmp/cmake
@@ -60,7 +60,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN true \
     && apt-get update \
     && apt-get -y install wget \
-    && apt-get clean \ 
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && true
 
@@ -75,14 +75,14 @@ RUN true \
     && wget -O Python.tgz https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz  \
     && tar xzf Python.tgz \
     && cd Python-$PYTHON_VER \
-    && ./configure --enable-shared --enable-optimizations \ 
+    && ./configure --enable-shared --enable-optimizations \
     && make install \
     && ln -s /usr/local/bin/python3 /usr/local/bin/python \
     && ln -s /usr/local/bin/pip3 /usr/local/bin/pip \
     && rm -rf /home/tmp/python \
-    && apt-get -y remove build-essential libssl-dev zlib1g-dev \ 	
+    && apt-get -y remove build-essential libssl-dev zlib1g-dev \
     && apt autoremove -y \
-    && apt-get clean \ 
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && ldconfig \
     && true
